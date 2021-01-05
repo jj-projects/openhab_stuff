@@ -1,0 +1,50 @@
+{
+    "template": "<div class=\"container-fluid\">\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <span><widget-icon iconset=\"'smarthome-set'\" icon=\"'temperature'\" /></span>\n      <span>Temperatur</span>\n      <span style=\"color: red; font-size: 24pt\">{{itemValue(config.item_temperature)}}°C</span>\n    </div>\n    <div class=\"col-md-6\">\n      <span><widget-icon iconset=\"'smarthome-set'\" icon=\"'drop'\" /></span>\n      <span>Luftfeuchtigkeit</span>\n      <span style=\"color: cyan; font-size: 24pt\">{{itemValue(config.item_humidity)}}%</span>\n    </div>\n  </div>\n\n  <div class=\"row\">&nbsp;</div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\"><span><widget-icon iconset=\"'smarthome-set'\" icon=\"'ventilation'\" /></span>\n      <span>Wind</span>\n      <span style=\"color: red; font-size: 24pt\">{{itemValue(config.item_wind)}}<small style=\"font-size:8pt\">km/h</small></span>\n    </div>\n    <div class=\"col-md-6\"><span><widget-icon iconset=\"'smarthome-set'\" icon=\"'bulb'\" /></span>\n      <span>Helligkeit</span>\n      <span style=\"color: cyan; font-size: 24pt\">{{itemValue(config.item_light)}}%</span>\n    </div>\n  </div>\n\n  <div class=\"row\">&nbsp;</div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <span><widget-icon iconset=\"'smarthome-set'\" icon=\"'thermostat'\" /></span>\n      <span>Luftdruck</span>\n      <span style=\"color: green; font-size: 24pt\">\n        {{'%.01f' | sprintf:itemValue(config.item_pressure)}}<small style=\"font-size:8pt\">mBar</small>\n      </span>\n    </div>\n  </div>\n\n\t<div class=\"row\">&nbsp;</div>\n\n\t<div class=\"row\">\n  \t<div class=\"col-md-12\">\n      <div><span style=\"align: center\"><widget-icon iconset=\"'smarthome-set'\" icon=\"'eye'\" /></span></div>\n  \t\t<div><span style=\"align: center\">{{itemValue(config.item_lastseen) | date:'dd.MM.yyyy HH:mm:ss'}}</span></div>\n    </div>\n  </div>\n</div>\n",
+    "settings": [
+        {
+            "type": "item",
+            "id": "item_temperature",
+            "label": "Temperatur: Item",
+            "default": "-",
+            "description": "Aussentemperatur"
+        },
+        {
+            "type": "item",
+            "id": "item_pressure",
+            "label": "Pressure: Item",
+            "default": "-",
+            "description": "Luftdruck"
+        },
+        {
+            "type": "item",
+            "id": "item_humidity",
+            "label": "Humidity: Item",
+            "default": "-",
+            "description": "Luftfeuchtigkeit"
+        },
+        {
+            "type": "item",
+            "id": "item_light",
+            "label": "Light: Item",
+            "default": "-",
+            "description": "Licht in Prozent"
+        },
+        {
+            "type": "item",
+            "id": "item_wind",
+            "label": "Windspeed: Item",
+            "default": "-",
+            "description": "Windgeschwindigkeit"
+        },
+        {
+            "type": "item",
+            "label": "Last Seen",
+            "id": "item_lastseen",
+            "default": "-",
+            "description": "Date of values last seen"
+        }
+    ],
+    "name": "Weatherstation",
+    "author": "Joerg Juenger",
+    "description": "Wetterstation"
+}

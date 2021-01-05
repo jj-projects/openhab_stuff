@@ -1,0 +1,36 @@
+{
+    "template": "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <h3 class=\"text-warning\">{{config.title}}</h3>\n  </div>\n\n  <div class=\"row\">\n    <div ng-init='battery={\n        \"customwidget\": \"Percent_Knob\",\n        \"config\": {\n          \"item_name\": \"Batterie\",\n          \"item_value\": config.battery,\n        }\n      }'>\n      <div class=\"col-md-6\"><widget-template ng-model=\"battery\"></widget-template></div>\n    </div>\n\n    <div ng-init='linkage={\n        \"customwidget\": \"Percent_Knob\",\n        \"config\": {\n          \"item_name\": \"Link\",\n          \"item_value\": config.link,\n        }\n      }'>\n      <div class=\"col-md-6\"><widget-template ng-model=\"linkage\"></widget-template></div>\n  </div>\n\n  <div class=\"row\">\n  \t<div class=\"col-md-12\">\n      <div><span style=\"align: center\"><widget-icon iconset=\"'smarthome-set'\" icon=\"'eye'\" /></span></div>\n  \t\t<div><span style=\"align: center\">{{itemValue(config.item_lastseen) | date:'dd.MM.yyyy HH:mm:ss'}}</span></div>\n    </div>\n  </div>\n</div>",
+    "name": "Smokedetector",
+    "author": "Joerg Juenger",
+    "description": "Rauchmelder Widget",
+    "settings": [
+        {
+            "type": "string",
+            "id": "title",
+            "label": "Title",
+            "default": "Rauchmelder",
+            "description": "Name of smoke detector"
+        },
+        {
+            "type": "item",
+            "id": "link",
+            "label": "Link",
+            "default": "-",
+            "description": "Link Quality"
+        },
+        {
+            "type": "item",
+            "id": "battery",
+            "label": "Battery",
+            "default": "-",
+            "description": "Battery Level"
+        },
+        {
+            "type": "item",
+            "id": "item_lastseen",
+            "label": "Last Seen",
+            "default": "-",
+            "description": "Smokedetector - values last seen"
+        }
+    ]
+}

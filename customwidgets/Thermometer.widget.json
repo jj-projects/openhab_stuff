@@ -1,0 +1,29 @@
+{
+    "template": "<div class=\"row\">\n  <div class=\"col-xs-5\"><span><widget-icon iconset=\"'smarthome-set'\" icon=\"'temperature'\" /></span>Temperatur</div>\n  <div class=\"col-xs-5\"><span><widget-icon iconset=\"'smarthome-set'\" icon=\"'drop'\" /></span>Luftfeuchtigkeit</div>\n</div>\n\n<div class=\"row\">\n  <div class=\"col-xs-5\"><span style=\"color: red; font-size: 28pt\">{{itemValue(config.item_temperature)}}°C</span></div>\n  <div class=\"col-xs-5\">\n    <span style=\"color: green; font-size: 28pt\">\n\t\t\t{{'%.02f' | sprintf:itemValue(config.item_humidity) * 100}}%\n    </span>\n  </div>\n</div>\n\n<div class=\"row\">&nbsp;</div>\n\n<div><span style=\"align: center\"><widget-icon iconset=\"'smarthome-set'\" icon=\"'tv'\" /></span></div>\n<div><span style=\"align: center\">{{itemValue(config.item_state)}}</span></div>\n",
+    "name": "Thermometer",
+    "author": "Joerg Juenger",
+    "description": "Thermometer incl. Pressure",
+    "settings": [
+        {
+            "type": "item",
+            "id": "item_temperature",
+            "label": "Temperatur",
+            "default": "-",
+            "description": "Temperatur"
+        },
+        {
+            "type": "item",
+            "label": "Luftfeuchtigkeit",
+            "id": "item_humidity",
+            "default": "-",
+            "description": "Luftfeuchtigkeit"
+        },
+        {
+            "type": "item",
+            "id": "item_state",
+            "label": "Status",
+            "default": "-",
+            "description": "Staus des Thermometers"
+        }
+    ]
+}
